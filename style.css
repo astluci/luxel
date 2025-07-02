@@ -1,0 +1,378 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+header {
+    position: relative; /* Necesario para usar ::before */
+    background-image: url(img/PORTADA-JOYERÍA-GRAU.jpg); /* Imagen de fondo */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-size: cover; /* Hace que la imagen cubra todo el área */
+    height: 922px; /* Altura del header */
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: auto;
+    align-items: center;
+}
+body{
+    margin-bottom: 0;
+}
+
+/* Overlay con opacidad */
+header::before {
+    content: ''; /* Genera un elemento vacío */
+    position: absolute; /* Se posiciona sobre el header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(107, 76, 38, 0.555); /* Color con opacidad */
+    z-index: 1; /* Asegura que esté encima de la imagen */
+}
+
+/* Contenido del header */
+header > * {
+    position: relative; /* Asegura que el contenido esté encima del overlay */
+    z-index: 2; /* Posiciona el contenido por encima del overlay */
+}
+header ul{
+    font-size:30px;
+    font-weight:200;
+}
+.btn{
+    margin-left: 10px;
+}
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+.logo{
+    font-size: 80px;
+    font-weight:500;
+}
+.head{
+    background-color: #ffffff3a;
+    height: 780px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+#parrafo{
+    position: absolute;
+    bottom: 0;
+    width: 79%;
+}
+
+#texto1{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:200;
+    font-style:normal;
+}
+
+/* Animación subrayado más lento, fino y cercano al texto */
+.navbar-nav .nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px; /* más pegado al texto */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* más cerca del texto */
+  left: 0;
+  width: 0%;
+  height: 1px; /* más delgada */
+  background-color: currentColor;
+  transition: width 0.6s ease; /* más lenta */
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+/*Carrusel*/
+
+#carrusel{
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+.cr-slide-1{
+    background-image:url('img/anillo.jpg')
+}
+
+.cr-slide-2{
+    background-image:url('img/anillo\ oro\ carrusel.jpg')
+}
+
+.cr-slide-3{
+    background-image:url('img/foto\ anillos.jpg')
+}
+
+.carousel-banner>div{
+    display: none;
+}
+
+.carousel-banner>img{
+    max-width: 50%;
+    filter: drop-shadow(2px 2px 5px black);
+    opacity: 0.5;
+}
+
+
+
+.carousel-banner{
+    aspect-ratio: 2/1;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+}
+
+
+
+/* ─────────── Tarjeta del producto ─────────── */
+#productos_nuevos{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.producto-card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform .3s, box-shadow .3s;
+  background-color: #fff;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen responsiva dentro del contenedor ratio */
+.object-fit-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ratio {
+  overflow: hidden;
+}
+
+/* ─────────── Tipografías ─────────── */
+.section-title {
+  font-family: "Bodoni Moda", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4b2f13;
+  margin-bottom: 2rem;
+}
+
+.card-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 00;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #643b0c;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #6c757d;
+  line-height: 1.4;
+}
+
+/* ─────────── Precio ─────────── */
+.producto-precio {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #643b0c;
+  font-size: 1.05rem;
+}
+
+/* ─────────── Botón "Añadir" ─────────── */
+.btn-outline-dark {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #4b2f13;
+  border: 2px solid #4b2f13;
+  border-radius: 6px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  padding: 0.35rem 1rem;
+}
+
+.btn-outline-dark:hover {
+  background-color: #4b2f13;
+  color: #fff;
+}
+
+
+
+/* Categorias */
+#categorias{
+    padding-top: 100px;
+}
+
+.category-card{
+    height: 180px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: rgb(100, 65, 12);
+    transition: transform 0.3s;
+}
+.category-card:hover{
+    transform:  translateY(-5px);
+}
+.category-title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(124, 72, 3, 0.6);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    z-index: 10;
+}
+
+.category-card > img{
+    width: 100%;
+    object-fit: cover;
+}
+.category-card img { object-fit: cover; height: 160px; width: 100%; }
+
+
+/*Pastillas Informativas*/
+
+.img-container {
+  width: 460px;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 8px; /* opcional: bordes redondeados */
+}
+
+.object-fit-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-container {
+  width: 460px;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 8px; /* opcional: bordes redondeados */
+}
+
+.img-container {
+  width: 460px;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.object-fit-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.full-width-divider {
+  border: none;
+  border-top: 2px solid white;
+  opacity: 1;
+  margin: 3rem 0;
+}
+#pastillas_info h2{
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: auto;
+    font-weight:bolder;
+}
+#pastillas_info .textoo{
+    margin-top: 50px;
+}
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  z-index: 1050;
+  transition: right 0.4s ease;
+  padding: 20px;
+}
+
+.cart-sidebar.active {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cart-body {
+  margin-top: 20px;
+}
+#contacto {
+    padding-top: 40px;
+    padding-bottom: 40px; /* Asegura que no se coma el footer */
+    margin-top: 60px !important;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: #ffffff; /* el mismo color que el área de contacto */
+    text-align: center;
+    font-size: 0.9rem;
+    color: #4b2f13;
+}
+
+#contacto h2 {
+  font-family: "Bodoni Moda", serif;
+  font-weight: bolder;
+  color: #6d4c2e;
+  text-transform: uppercase;
+}
+
+
+/* Fondo oscuro detrás del carrito */
+.offcanvas {
+  background-color: #fdfaf6;
+}
+
+.offcanvas-title,
+.offcanvas-body {
+  color: #6d4c2e;
+}
+
+
+
+
